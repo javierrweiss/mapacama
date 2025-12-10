@@ -1,0 +1,30 @@
+{:paths ["src" "resources"]
+ :deps {com.potetm/fusebox {:mvn/version "1.0.11"}
+        com.brunobonacci/mulog {:mvn/version "0.9.0"}
+        com.cnuernber/charred {:mvn/version "1.037"} 
+        org.clojure/core.async {:mvn/version "1.8.741"}
+        dev.onionpancakes/chassis {:mvn/version "1.0.365"}
+        metosin/reitit {:mvn/version "0.9.2"}
+        ring/ring-core {:mvn/version "1.15.3"}
+        ring/ring-defaults {:mvn/version "0.7.0"}
+        http-kit/http-kit {:mvn/version "2.9.0-beta2"}
+        overtone/at-at {:mvn/version "1.4.65"}
+        com.lambdaisland/config {:mvn/version "0.10.37"}
+        RelJDBC/jar {:local/root "resources/RelJDBC.jar"}
+        org.apache.commons/commons-pool2 {:mvn/version "2.13.0"}
+        com.github.seancorfield/honeysql {:mvn/version "2.7.1364"}
+        com.github.seancorfield/next.jdbc {:mvn/version "1.3.1070"}}
+ :aliases {:dev {:extra-paths ["dev" "test"]
+                 :extra-deps {com.nextjournal/beholder {:mvn/version "1.0.3"}
+                              djblue/portal {:mvn/version "0.62.0"}
+                              ring/ring-devel {:mvn/version "1.15.3"}}}
+           :build {:extra-paths ["test" "dev" "resources"]
+                   :deps {io.github.clojure/tools.build {:mvn/version "0.10.11"}
+                          org.clojure/test.check {:mvn/version "1.1.2"}
+                          io.github.cognitect-labs/test-runner {:git/tag "v0.5.1" :git/sha "dfb30dd"}}}
+           :test {:extra-paths ["test"]
+                  :extra-deps {org.clojure/test.check {:mvn/version "1.1.2"}
+                               io.github.cognitect-labs/test-runner
+                               {:git/tag "v0.5.1" :git/sha "dfb30dd"}}
+                  :main-opts ["-m" "cognitect.test-runner"]
+                  :exec-fn cognitect.test-runner.api/test}}}
