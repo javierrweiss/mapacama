@@ -1,0 +1,7 @@
+{:db {:maestros {:dbtype "relativity"
+                 :classname "relativity.jdbc.Driver"
+                 :dbname "Maestrossc9"
+                 :user "ADMIN"
+                 :password ""
+                 :host "10.200.0.30"
+                 :port 1583}}}
