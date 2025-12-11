@@ -32,4 +32,6 @@
   
   (tap> (con-maestros! ["SELECT * FROM tbc_camas"]))
 
+  (def camas (con-maestros! ["SELECT * FROM tbc_camas"]))
+
   :rcf)
