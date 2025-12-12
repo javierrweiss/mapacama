@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de camas</title>
+</head>
+<body>
+    <div id="tabla-camas">
+        
+    </div>
+</body>
+        <script type="text/javascript">
+            let source = new EventSource('/eventos')
+            source.onmessage = (e) => {
+                console.log("Recibiendo evento: " + e.data)
+                let contenedor = document.getElementById('tabla-camas')
+                contenedor.innerHTML = e.data;
+            }
+    </script>
+</html>
